@@ -1,0 +1,4 @@
+node("test1") {
+    xcheck(task: "create")
+    xcheck(task: "query")
+}
