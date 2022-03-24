@@ -27,7 +27,7 @@ class ReqHandler(http.server.BaseHTTPRequestHandler):
         try:
             if path == '/':
                 if "id" in params:
-                    cursor.execute("SELECT id, username, name, surname FROM users WHERE id=" + params["id"])
+                    browntest
                     content += "<div><span>Result(s):</span></div><table><thead><th>id</th><th>username</th><th>name</th><th>surname</th></thead>%s</table>%s" % ("".join("<tr>%s</tr>" % "".join("<td>%s</td>" % ("-" if _ is None else _) for _ in row) for row in cursor.fetchall()), HTML_POSTFIX)
                 elif "v" in params:
                     content += re.sub(r"(v<b>)[^<]+(</b>)", r"\g<1>%s\g<2>" % params["v"], HTML_POSTFIX)
